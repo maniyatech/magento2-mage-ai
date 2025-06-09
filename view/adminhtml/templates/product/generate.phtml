@@ -1,0 +1,58 @@
+<?php
+/**
+ * ManiyaTech
+ *
+ * @author        Milan Maniya
+ * @package       ManiyaTech_MageAI
+ */
+
+/**
+ * @var \Magento\Framework\View\Element\Template $block
+ * @var \ManiyaTech\MageAI\ViewModel\MageAI $viewModel
+ * @var \Magento\Framework\Escaper $escaper
+ */
+$viewModel = $block->getViewModel();
+$isEnabled = $viewModel->isEnabled();
+?>
+<?php if ($isEnabled): ?>
+    <?php $productTitle = $viewModel->getProductAttributeTitle(); ?>
+    <?php $productAttributeCode = $viewModel->getProductAttribute(); ?>
+    <div id="advanced-generate-modal" style="display:none;">
+        <?php $generateAjaxUrl = $block->getUrl('mageai/index/generate'); ?>
+        <div class="generate-modal-body-content">
+            <form id="mageai-prompt-generate-form">
+                <fieldset class="admin__fieldset">
+                    <div class="admin__field admin__field-wide">
+                        <div class="admin__field-control">
+                            <textarea
+                                type="text"
+                                rows="3"
+                                id="mageai-custom-prompt"
+                                class="admin__control-text"
+                                placeholder="E.g. Create an engaging HTML product description using the following details:&#10;Product Name: Proteus Fitness Jackshirt&#10;Color: Blue" <?php //phpcs:ignore ?>
+                                name="custom_prompt"></textarea>
+                            <div class="admin__field-note mpai-modal-note">
+                                <span>
+                                    <?= /* @noEscape */ $escaper->escapeHtml(__('Please provide key details to generate your custom content.')) ?><?php //phpcs:ignore ?>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <script>
+        window.mageAIAjaxUrl = '<?= /* @noEscape */ $escaper->escapeJs($generateAjaxUrl) ?>';
+        window.mageAIProductTitle = '<?= /* @noEscape */ $escaper->escapeHtml($productTitle) ?>';
+        window.mageAIProductCode = '<?= /* @noEscape */ $escaper->escapeHtml($productAttributeCode) ?>';
+        window.isMpMageAIEnabled = '<?= /* @noEscape */ $escaper->escapeJs($isEnabled) ?>';
+    </script>
+    <script type="text/x-magento-init">
+        {
+            "#mageai-prompt-generate-form": {
+                "mageAiGenerate": {}
+            }
+        }
+    </script>
+<?php endif ?>

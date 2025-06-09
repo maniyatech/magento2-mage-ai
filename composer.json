@@ -1,0 +1,25 @@
+{
+    "name": "maniyatech/magento2-mage-ai",
+    "description": "MageAI is a smart, AI-powered content generation extension for Magento 2 that helps merchants create compelling product descriptions, short descriptions, and SEO metadata (meta title, keywords, meta description) in just a few clicks. Designed to save time and boost your store’s visibility, MageAI integrates directly into the product admin panel, allowing you to generate high-converting content tailored to your products, brand tone, and SEO goals.",
+    "require": {
+        "maniyatech/module-core": "*"
+    },
+    "type": "magento2-module",
+    "license": "proprietary",
+    "version": "1.0.0",
+    "authors": [
+        {
+          "name": "ManiyaTech",
+          "email": "help.maniyatech@gmail.com",
+          "role": "Technical Support"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "ManiyaTech\\MageAI\\": ""
+        }
+    }
+}

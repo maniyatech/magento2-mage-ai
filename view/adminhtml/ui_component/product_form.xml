@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ManiyaTech
+ *
+ * @author        Milan Maniya
+ * @package       ManiyaTech_MageAI
+ */
+-->
+
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <component component="ManiyaTech_MageAI/js/mageai" name="mageai" class="ManiyaTech\MageAI\Ui\Generator">
+        <argument name="data" xsi:type="array">
+            <item name="completion_config" xsi:type="object">ManiyaTech\MageAI\Model\CompletionConfig</item>
+        </argument>
+    </component>
+</form>

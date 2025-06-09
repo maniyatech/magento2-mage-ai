@@ -1,0 +1,27 @@
+<?php
+/**
+ * ManiyaTech
+ *
+ * @author        Milan Maniya
+ * @package       ManiyaTech_MageAI
+ */
+
+/** @var \ManiyaTech\MageAI\Block\Adminhtml\Product\Helper $block */
+/** @var \Magento\Framework\Escaper $escaper */
+?>
+
+<div data-bind="scope: 'mageai-product-helper'" class="mageai-product-helper">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<input type="hidden" id="openai_url" name="openai_url" value="<?= /* @noEscape */ $block->getUrl('mageai/index/index')?>"><?php //phpcs:ignore ?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "mageai-product-helper": <?= /* @noEscape */ $block->getComponentJsonConfig() ?>
+                }
+            }
+        }
+    }
+</script>

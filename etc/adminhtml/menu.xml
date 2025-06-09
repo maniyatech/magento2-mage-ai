@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ManiyaTech
+ *
+ * @author        Milan Maniya
+ * @package       ManiyaTech_MageAI
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+    	<add id="ManiyaTech_MageAI::main" title="Mage AI" translate="Mage AI" module="ManiyaTech_MageAI" parent="ManiyaTech_Core::core" sortOrder="100" resource="ManiyaTech_MageAI::main" dependsOnConfig="mageai/general/enabled"/>
+
+        <add id="ManiyaTech_MageAI::configuration_menu" title="Configurations" module="ManiyaTech_MageAI" parent="ManiyaTech_MageAI::main" sortOrder="10" action="admin/system_config/edit/section/mageai" resource="ManiyaTech_MageAI::configuration_menu" target="_blank"/>
+    </menu>
+</config>
