@@ -10,15 +10,19 @@
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <section id="mageai" translate="label" sortOrder="100" type="text" showInDefault="1">
+        <section id="mageai" translate="label" sortOrder="130" type="text" showInDefault="1">
             <class>separator-top</class>
             <label>Mage AI</label>
             <tab>maniyatech</tab>
             <resource>ManiyaTech_MageAI::configuration</resource>
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1">
-                <label>General</label>
+                <label>General Settings</label>
+                <field id="ManiyaTech_MageAI" translate="label" type="label" sortOrder="1" showInDefault="1">
+                    <label>Composer Version</label>
+                    <frontend_model>ManiyaTech\Core\Block\Adminhtml\System\Config\Composer\Version</frontend_model>
+                </field>
                 <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" canRestore="1">
-                    <label>Enable</label>
+                    <label>Enable Module</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
             </group>

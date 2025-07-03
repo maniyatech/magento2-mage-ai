@@ -13,7 +13,7 @@
         <resources>
             <resource id="Magento_Backend::admin">
                 <resource id="ManiyaTech_Core::core">
-                    <resource id="ManiyaTech_MageAI::main" title="MageAI Settings" translate="title" sortOrder="100">
+                    <resource id="ManiyaTech_MageAI::main" title="MageAI Settings" translate="title" sortOrder="130">
                         <resource id="ManiyaTech_MageAI::actions" title="Actions" translate="title">
                             <resource id="ManiyaTech_MageAI::generate" title="Generate Text" translate="title" sortOrder="10"/>
                         </resource>
@@ -24,7 +24,7 @@
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
                             <resource id="ManiyaTech_Core::config">
-                                <resource id="ManiyaTech_MageAI::configuration" title="MageAI" translate="title" sortOrder="100"/>
+                                <resource id="ManiyaTech_MageAI::configuration" title="MageAI" translate="title" sortOrder="130"/>
                             </resource>
                         </resource>
                     </resource>
